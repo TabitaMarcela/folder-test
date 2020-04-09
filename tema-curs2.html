@@ -1,0 +1,56 @@
+<html>
+
+<body>
+    <script>
+        // Ex 1
+        //  Folosind switch statement transformati urmatoarea suma din 749 RON in EUR, HUF, USD.
+
+        var tip = "USD";
+        var valoare = 749;
+        switch (tip) {
+            case ("EUR"):
+                var rez = 749 / 4.83;
+                break;
+            case ("HUF"):
+                var rez = 749 / 0.014;
+                break;
+            case ("USD"):
+                var rez = 749 / 4.42;
+                break;
+            default: console.log("not found");
+        }
+        console.log(valoare + " RON = " + rez + " " + tip);
+
+        // Ex 2
+        // functie care primeste un parametru si returneaza tipul acestuia.
+        console.log(tipParametru(new Date()));
+        console.log(tipParametru("string"));
+        console.log(tipParametru(23432));
+        console.log(tipParametru(true));
+        function tipParametru(a) {
+            return typeof a;
+        }
+
+        // Ex 3
+        // Scrieti o functie javascript care accepta ca parametru un string care ia fiecare cuvant in parte si ii extrage prima litera, dupa care concateneaza literele extrase
+        concateneaza("Universitatea Tehnica Cluj Napoca");
+        function concateneaza(a) {
+            var rezultat = a[0];
+            for(var i = 0; i < a.length; i++){
+               if(a[i] == " ")
+                    rezultat = rezultat + a[i+1];               
+            }
+           console.log(rezultat);
+        }   
+
+        // Ex 4
+        //
+
+        // Ex 5
+        //
+
+        
+    </script>
+</body>
+
+</html>
