@@ -3,18 +3,18 @@
     <script>
         
 //  ex 2: arie cerc raza 10 cm 
-const PI = 3.1415;
-var raza = 10;
-var arie = PI * raza * raza; 
+const PI = 3.14;
+const raza = 10;
+const arie = PI * raza ** 2; 
 console.log("arie = " + arie);
 
-var filme=["The Avengers", "A walk to remember", "Aladdin", "007", "The Pirates"];
-for(var i = 0; i<filme.length; i++)
+const filme=["The Avengers", "A walk to remember", "Aladdin", "007", "The Pirates"];
+for(let i = 0; i<filme.length; i++)
         console.log("pozitia: " + i + " - " + filme[i]);
 var numere=[5, 3, "1", 7, "9", 30, "45", 7];
 
-var min=max=numere[0];
-for(var i = 0; i<numere.length; i++){
+let min=max=numere[0];
+for(let i = 0; i<numere.length; i++){
     if(numere[i] < min)
         min = numere[i];
      if(numere[i] > max)
