@@ -5,7 +5,7 @@
         // Ex 1
         //  Folosind switch statement transformati urmatoarea suma din 749 RON in EUR, HUF, USD.
 
-        var tip = "USD";
+        var tip = "EUR";
         var valoare = 749;
         switch (tip) {
             case ("EUR"):
@@ -36,20 +36,119 @@
         concateneaza("Universitatea Tehnica Cluj Napoca");
         function concateneaza(a) {
             var rezultat = a[0];
-            for(var i = 0; i < a.length; i++){
-               if(a[i] == " ")
-                    rezultat = rezultat + a[i+1];               
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] == " ")
+                    rezultat = rezultat + a[i + 1];
             }
-           console.log(rezultat);
-        }   
+            console.log(rezultat);
+        }
+
+        const fraze = [
+            "Quisque faucibus ipsum id nibh egestas bibendum.",
+            "Phasellus tincidunt sapien nec est tempus lacinia.",
+            "Curabitur ac elit at turpis ultrices hendrerit at et tellus.",
+            "Praesent a magna a ligula gravida sodales eu ut erat.",
+            "Ut eleifend velit vitae ipsum mattis viverra."
+        ]
+        for (let i = 0; i < fraze.length; i++) {
+            concateneaza(fraze[i]);
+        }
+
 
         // Ex 4
         //
+        console.log(myFunction("ama"));
+        function myFunction(name) {
+            return "Hello " + name;
+        }
+
+        class Shape {
+            constructor(culoare, laturi) {
+                this.culoare = culoare;
+                this.laturi = laturi;
+            }
+            calculeazaPerimetru() {
+                let perimetru = 0;
+                for (let latura of this.laturi) {
+                    perimetru += latura;
+                }
+                return perimetru;
+            }
+
+            semiperimetru() {
+                return this.calculeazaPerimetru() / 2;
+            }
+
+            shapeType() {
+                let type;
+                switch (this.laturi.length) {
+                    case (3):
+                        type = "triunghi";
+                        break;
+                    case (4):
+                        type = "patrulater";
+                        break;
+                    case (5):
+                        type = "pentagon";
+                        break;
+                    case (6):
+                        type = "hexagon";
+                        break;
+                    default: type = "work in progress";
+                }
+                return type;
+            }
+        }
+
+        shape = new Shape("red", [1, 2, 3, 5, 6, 7]);
+        console.log(shape.shapeType());
+        console.log(shape.culoare);
+        console.log(shape.calculeazaPerimetru());
+        console.log(shape.semiperimetru());
 
         // Ex 5
         //
+        class Patrat extends Shape {
+            constructor(culoare, laturi) {
+                laturi = [laturi[0], laturi[1], laturi[0], laturi[1]];
+                super(culoare, laturi);
+                this.laturi = laturi;
+            }
 
-        
+            arie() {
+                return this.laturi[0] * this.laturi[1];
+            }
+        }
+
+        class TriughiEchilateral extends Shape {
+            constructor(culoare, laturi) {
+                laturi = [laturi, laturi, laturi];
+                super(culoare, laturi);
+                this.laturi = laturi;
+            }
+
+            arie() {
+                return this.laturi[0] ** 2 * Math.sqrt(3) / 4;
+            }
+        }
+
+        const patrat = new Patrat("purple", [2, 4]);
+        console.log("patrat");
+        console.log(patrat.shapeType());
+        console.log(patrat.calculeazaPerimetru());
+        console.log(patrat.semiperimetru());
+        console.log(patrat.arie());
+        console.log(patrat.culoare);
+
+        const triunghiEchi = new TriughiEchilateral("green", 3);
+        console.log("echilateral");
+        console.log(triunghiEchi.shapeType());
+        console.log(triunghiEchi.calculeazaPerimetru());
+        console.log(triunghiEchi.semiperimetru());
+        console.log(triunghiEchi.arie());
+        console.log(triunghiEchi.culoare);
+
+
     </script>
 </body>
 
