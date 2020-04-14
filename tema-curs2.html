@@ -108,7 +108,7 @@
 
         // Ex 5
         //
-        class Patrat extends Shape {
+        class Dreptunghi extends Shape {
             constructor(culoare, laturi) {
                 laturi = [laturi[0], laturi[1], laturi[0], laturi[1]];
                 super(culoare, laturi);
@@ -132,13 +132,13 @@
             }
         }
 
-        const patrat = new Patrat("purple", [2, 4]);
-        console.log("patrat");
-        console.log(patrat.shapeType());
-        console.log(patrat.calculeazaPerimetru());
-        console.log(patrat.semiperimetru());
+        const dreptunghi = new Dreptunghi("purple", [2, 4]);
+        console.log("dreptunghi");
+        console.log(dreptunghi.shapeType());
+        console.log(dreptunghi.calculeazaPerimetru());
+        console.log(dreptunghi.semiperimetru());
         console.log(patrat.arie());
-        console.log(patrat.culoare);
+        console.log(dreptunghi.culoare);
 
         const triunghiEchi = new TriughiEchilateral("green", 3);
         console.log("echilateral");
